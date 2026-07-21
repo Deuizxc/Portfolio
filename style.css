@@ -39,7 +39,7 @@ header {
 
 .logo {
   font-size: 3rem;
-  color: rgb(75, 0, 136);
+  color: rgb(192, 12, 42);
   font-weight: 800;
   cursor: pointer;
   transition: 0.5s ease;
@@ -139,7 +139,7 @@ span {
 
 .home-img img {
   position: relative;
-  width: 32vw;
+  width: 25vw;
   border-radius: 50%;
   box-shadow: 0 0 25pxrgb (236, 166, 166) b;
   cursor: pointer;
@@ -231,15 +231,37 @@ span {
 
 @keyframes words {
   0%,
-  30% {
+  50% {
     content: "a student";
   }
-  33%,
-  63% {
+  51%,
+  100% {
     content: "a developer";
   }
-  66%,
-  100% {
-    content: "a good person:)";
+}
+
+@media (max-width: 1000px) {
+  .home {
+    gap: 4rem;
+  }
+}
+
+@media (max-width: 995px) {
+  .home {
+    flex-direction: column;
+    margin: 5rem 4rem;
+  }
+
+  .home .home-content h3 {
+    font-size: 2.5rem;
+  }
+
+  .home-content h1 {
+    font-size: 5rem;
+  }
+
+  .home-img img {
+    width: 70vw;
+    margin-top: 4rem;
   }
 }
