@@ -303,3 +303,124 @@ span {
   border-color: #38bdf8;
   transform: scale(1.05);
 }
+/* --- PROJECTS SECTION --- */
+.projects {
+  background-color: #111111;
+  padding: 6rem 9% 8rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.projects .heading {
+  font-size: 3rem;
+  font-weight: 400;
+  color: #ffffff;
+  margin-bottom: 3rem;
+  text-align: left;
+}
+
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+}
+
+.project-card {
+  background-color: transparent;
+  border: 1px dashed #3f3f46;
+  border-radius: 1.6rem;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+.project-card:hover {
+  border-color: #71717a;
+}
+
+/* Inner Image Styling */
+.project-img {
+  width: 100%;
+  border-radius: 1rem;
+  overflow: hidden;
+  margin-bottom: 2.5rem;
+  background-color: #ffffff;
+}
+
+.project-img img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-img img {
+  transform: scale(1.02);
+}
+
+.project-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.project-title-row {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+
+.project-title-row h3 {
+  font-size: 2.2rem;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.project-content p {
+  font-size: 1.4rem;
+  color: #a1a1aa;
+  line-height: 1.6;
+}
+
+/* Footer & Details Link */
+.project-footer {
+  border-top: 1px solid #27272a;
+  padding-top: 1.5rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.details-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.2rem;
+  color: #71717a;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.details-link i {
+  font-size: 1.6rem;
+}
+
+.project-card:hover .details-link {
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .projects-container {
+    grid-template-columns: 1fr;
+  }
+
+  .project-img img {
+    height: auto;
+    aspect-ratio: 16/9;
+  }
+}
