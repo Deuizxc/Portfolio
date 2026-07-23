@@ -424,3 +424,168 @@ span {
     aspect-ratio: 16/9;
   }
 }
+
+/* --- BENTO BOX SKILLS SECTION --- */
+.skills-bento {
+  background-color: #111111;
+  padding: 8rem 9% 6rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.skills-bento .heading {
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 4rem;
+  text-align: left;
+}
+
+.skills-bento .heading span {
+  color: #38bdf8;
+}
+
+/* The Grid Setup */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    3,
+    1fr
+  ); /* Divides the space into 3 equal columns */
+  gap: 2rem;
+}
+
+/* Base Card Styling */
+.bento-card {
+  background-color: #18181b;
+  border: 1px solid #27272a;
+  border-radius: 2rem;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.bento-card:hover {
+  border-color: #38bdf8;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px -10px rgba(56, 189, 248, 0.15);
+}
+
+/* Card Sizes based on Columns */
+.core-stack {
+  grid-column: span 2; /* Takes up 2 out of 3 columns */
+}
+
+.obsession {
+  grid-column: span 1; /* Takes up 1 out of 3 columns */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(145deg, #18181b 0%, #111111 100%);
+}
+
+.toolkit {
+  grid-column: span 3; /* Spans entirely across the bottom */
+}
+
+/* Text & Headers */
+.bento-header {
+  margin-bottom: 3rem;
+}
+
+.bento-card h3 {
+  font-size: 2.2rem;
+  color: #ffffff;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+}
+
+.bento-card p {
+  font-size: 1.4rem;
+  color: #a1a1aa;
+  line-height: 1.6;
+}
+
+/* Tech Items (Icons + Text) */
+.tech-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.toolkit-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+
+.tech-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: #111111;
+  padding: 1rem 1.8rem;
+  border-radius: 1rem;
+  border: 1px dashed #3f3f46;
+  transition: 0.3s ease;
+}
+
+.tech-item i {
+  font-size: 2.8rem;
+}
+
+.tech-item span {
+  font-size: 1.5rem;
+  color: #e4e4e7;
+  font-weight: 500;
+}
+
+.tech-item:hover {
+  border-color: #38bdf8;
+  background-color: #18181b;
+}
+
+/* Special Styling for the "Obsession" Card */
+.pulse-icon {
+  margin: 2.5rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pulse-icon i {
+  font-size: 5rem;
+  color: #38bdf8;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 900px) {
+  .bento-grid {
+    grid-template-columns: 1fr; /* Stacks everything into 1 column on smaller screens */
+  }
+
+  .core-stack,
+  .obsession,
+  .toolkit {
+    grid-column: span 1;
+  }
+}
