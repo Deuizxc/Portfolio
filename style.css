@@ -303,7 +303,6 @@ span {
   border-color: #38bdf8;
   transform: scale(1.05);
 }
-/* --- PROJECTS SECTION --- */
 .projects {
   background-color: #111111;
   padding: 6rem 9% 8rem;
@@ -339,7 +338,6 @@ span {
   border-color: #71717a;
 }
 
-/* Inner Image Styling */
 .project-img {
   width: 100%;
   border-radius: 1rem;
@@ -386,7 +384,6 @@ span {
   line-height: 1.6;
 }
 
-/* Footer & Details Link */
 .project-footer {
   border-top: 1px solid #27272a;
   padding-top: 1.5rem;
@@ -445,13 +442,9 @@ span {
   color: #38bdf8;
 }
 
-/* The Grid Setup */
 .bento-grid {
   display: grid;
-  grid-template-columns: repeat(
-    3,
-    1fr
-  ); /* Divides the space into 3 equal columns */
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
 }
 
@@ -476,11 +469,11 @@ span {
 
 /* Card Sizes based on Columns */
 .core-stack {
-  grid-column: span 2; /* Takes up 2 out of 3 columns */
+  grid-column: span 2;
 }
 
 .obsession {
-  grid-column: span 1; /* Takes up 1 out of 3 columns */
+  grid-column: span 1;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -488,10 +481,9 @@ span {
 }
 
 .toolkit {
-  grid-column: span 3; /* Spans entirely across the bottom */
+  grid-column: span 3;
 }
 
-/* Text & Headers */
 .bento-header {
   margin-bottom: 3rem;
 }
@@ -509,7 +501,6 @@ span {
   line-height: 1.6;
 }
 
-/* Tech Items (Icons + Text) */
 .tech-grid {
   display: flex;
   flex-wrap: wrap;
@@ -548,7 +539,6 @@ span {
   background-color: #18181b;
 }
 
-/* Special Styling for the "Obsession" Card */
 .pulse-icon {
   margin: 2.5rem 0;
   display: flex;
@@ -580,12 +570,151 @@ span {
 /* Mobile Responsiveness */
 @media (max-width: 900px) {
   .bento-grid {
-    grid-template-columns: 1fr; /* Stacks everything into 1 column on smaller screens */
+    grid-template-columns: 1fr;
   }
 
   .core-stack,
   .obsession,
   .toolkit {
     grid-column: span 1;
+  }
+}
+
+.certifications {
+  background-color: #111111;
+  padding: 8rem 9% 6rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.certifications .heading {
+  font-size: 3.5rem;
+  color: #ffffff;
+  margin-bottom: 4rem;
+  text-align: left;
+}
+
+.certifications .heading span {
+  color: #38bdf8;
+}
+
+.cert-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.cert-card {
+  background-color: #18181b;
+  border: 1px solid #27272a;
+  border-left: 4px solid #27272a;
+  border-radius: 1.2rem;
+  padding: 2.5rem 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+}
+
+.cert-card:hover {
+  border-color: #38bdf8;
+  border-left: 4px solid #38bdf8;
+  transform: translateX(10px);
+  box-shadow: 0 10px 25px -10px rgba(56, 189, 248, 0.15);
+}
+
+.cert-content-left {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.cert-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 1px dashed #3f3f46;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #111111;
+  color: #38bdf8;
+  font-size: 2.8rem;
+  flex-shrink: 0;
+}
+
+.cert-info h3 {
+  font-size: 2rem;
+  color: #ffffff;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.cert-issuer {
+  font-size: 1.4rem;
+  color: #e4e4e7;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.cert-issuer i {
+  color: #71717a;
+}
+
+.cert-date {
+  font-size: 1.2rem;
+  color: #a1a1aa;
+  background-color: #111111;
+  padding: 0.3rem 1rem;
+  border-radius: 2rem;
+  border: 1px solid #27272a;
+}
+
+.cert-proof {
+  flex-shrink: 0;
+  border-radius: 0.8rem;
+  overflow: hidden;
+  border: 1px solid #3f3f46;
+  width: 140px;
+  height: 90px;
+  background-color: #111111;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.cert-proof img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.cert-proof:hover img {
+  transform: scale(1.1);
+}
+
+.cert-proof:hover {
+  border-color: #38bdf8;
+}
+
+@media (max-width: 768px) {
+  .cert-card {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2.5rem 2rem;
+    gap: 2rem;
+  }
+
+  .cert-content-left {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .cert-proof {
+    width: 100%;
+    height: 180px;
   }
 }
