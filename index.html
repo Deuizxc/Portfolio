@@ -16,17 +16,53 @@
   </head>
   <body>
     <header>
-      <a href="#" class="logo"> </a>
+      <a href="#" class="logo">John<span>.</span></a>
       <nav>
         <a href="#" class="active">Home</a>
-        <a href="#">Skills</a>
-        <a href="#">Projects</a>
-        <a href="#">Certifications</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#certifications">Certifications</a>
         <a href="#">Contact</a>
       </nav>
     </header>
 
     <section class="home">
+      <div class="hero-bg" aria-hidden="true">
+        <span class="hero-glyph hero-glyph--1"
+          ><i class="bx bx-code-alt"></i
+        ></span>
+        <span class="hero-glyph hero-glyph--2"
+          ><i class="bx bx-terminal"></i
+        ></span>
+        <span class="hero-glyph hero-glyph--3"
+          ><i class="bx bx-lock-alt"></i
+        ></span>
+        <span class="hero-glyph hero-glyph--4"
+          ><i class="bx bx-server"></i
+        ></span>
+        <span class="hero-glyph hero-glyph--5"><i class="bx bx-hash"></i></span>
+        <span class="hero-glyph hero-glyph--6"
+          ><i class="bx bx-git-branch"></i
+        ></span>
+        <span class="hero-glyph hero-glyph--7"
+          ><i class="bx bx-network-chart"></i
+        ></span>
+        <span class="hero-glyph hero-glyph--8"
+          ><i class="bx bx-code-alt"></i
+        ></span>
+        <svg
+          class="hero-lines"
+          viewBox="0 0 100 100"
+          preserveAspectRatio="none"
+        >
+          <line x1="10" y1="14" x2="22" y2="32" />
+          <line x1="86" y1="24" x2="74" y2="42" />
+          <line x1="12" y1="76" x2="28" y2="62" />
+          <circle cx="22" cy="32" r="0.6" />
+          <circle cx="74" cy="42" r="0.6" />
+          <circle cx="28" cy="62" r="0.6" />
+        </svg>
+      </div>
       <div class="home-img">
         <img src="assets/pic.webp" alt="picture" />
       </div>
@@ -60,23 +96,23 @@
 
           <div class="tech-grid">
             <div class="tech-item">
-              <i class="bx bxl-html5" style="color: #e34f26"></i>
+              <i class="bx bxl-html5 icon-html"></i>
               <span>HTML</span>
             </div>
             <div class="tech-item">
-              <i class="bx bxl-css3" style="color: #264de4"></i>
+              <i class="bx bxl-css3 icon-css"></i>
               <span>CSS</span>
             </div>
             <div class="tech-item">
-              <i class="bx bxl-javascript" style="color: #f7df1e"></i>
+              <i class="bx bxl-javascript icon-js"></i>
               <span>JavaScript</span>
             </div>
             <div class="tech-item">
-              <i class="bx bxl-java" style="color: #007396"></i>
+              <i class="bx bxl-java icon-java"></i>
               <span>Java</span>
             </div>
             <div class="tech-item">
-              <i class="bx bxl-python" style="color: #3776ab"></i>
+              <i class="bx bxl-python icon-python"></i>
               <span>Python</span>
             </div>
           </div>
@@ -84,6 +120,7 @@
 
         <!-- 2. Current Obsession (Takes up 1 column) -->
         <div class="bento-card obsession">
+          <span class="eyebrow">Currently learning</span>
           <h3>Current Obsession</h3>
           <div class="pulse-icon">
             <i class="bx bx-laptop"></i>
@@ -103,19 +140,19 @@
 
           <div class="toolkit-row">
             <div class="tech-item">
-              <i class="bx bxl-visual-studio" style="color: #0078d7"></i>
+              <i class="bx bxl-visual-studio icon-vscode"></i>
               <span>VS Code</span>
             </div>
             <div class="tech-item">
-              <i class="bx bxl-git" style="color: #f1502f"></i>
+              <i class="bx bxl-git icon-git"></i>
               <span>Git</span>
             </div>
             <div class="tech-item">
-              <i class="bx bxl-github" style="color: #ffffff"></i>
+              <i class="bx bxl-github icon-github"></i>
               <span>GitHub</span>
             </div>
             <div class="tech-item">
-              <i class="bx bxl-figma" style="color: #f24e1e"></i>
+              <i class="bx bxl-figma icon-figma"></i>
               <span>Figma</span>
             </div>
           </div>
@@ -140,6 +177,11 @@
               A simple weather application that displays current weather
               information.
             </p>
+            <div class="project-tags">
+              <span class="tag">JavaScript</span>
+              <span class="tag">API</span>
+              <span class="tag">CSS</span>
+            </div>
           </div>
           <div class="project-footer">
             <a href="#" class="details-link"
@@ -157,6 +199,10 @@
               <h3>Url scanner</h3>
             </div>
             <p>A simple URL scanner that checks the safety of given URLs.</p>
+            <div class="project-tags">
+              <span class="tag">Python</span>
+              <span class="tag">Security</span>
+            </div>
           </div>
           <div class="project-footer">
             <a href="#" class="details-link"
@@ -177,6 +223,10 @@
               A simple application to check the strength of user-defined
               passwords.
             </p>
+            <div class="project-tags">
+              <span class="tag">JavaScript</span>
+              <span class="tag">Security</span>
+            </div>
           </div>
           <div class="project-footer">
             <a href="#" class="details-link"
@@ -197,6 +247,10 @@
               First year finals project. It is an application that forecasts the
               GWA of a student based on their input.
             </p>
+            <div class="project-tags">
+              <span class="tag">Java</span>
+              <span class="tag">Data</span>
+            </div>
           </div>
           <div class="project-footer">
             <a href="#" class="details-link"
