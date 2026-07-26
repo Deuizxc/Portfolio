@@ -386,42 +386,96 @@ span {
   font-size: 2.2rem;
   transform: rotate(3deg);
 }
+.bg-glyph--13 {
+  top: 55%;
+  left: 15%;
+  font-size: 2.4rem;
+  transform: rotate(-3deg);
+  color: #14313f;
+}
+.bg-glyph--14 {
+  top: 12%;
+  left: 70%;
+  font-size: 2rem;
+  transform: rotate(9deg);
+}
+
+/* odd glyphs float up/down, even glyphs sway diagonally, for varied motion */
+.bg-glyph--1 i,
+.bg-glyph--3 i,
+.bg-glyph--5 i,
+.bg-glyph--7 i,
+.bg-glyph--9 i,
+.bg-glyph--11 i,
+.bg-glyph--13 i {
+  animation-name: bg-drift;
+}
+
+.bg-glyph--2 i,
+.bg-glyph--4 i,
+.bg-glyph--6 i,
+.bg-glyph--8 i,
+.bg-glyph--10 i,
+.bg-glyph--12 i,
+.bg-glyph--14 i {
+  animation-name: bg-sway;
+}
 
 .bg-glyph--1 i {
   animation-delay: 0s;
+  animation-duration: 6s;
 }
 .bg-glyph--2 i {
   animation-delay: 1.2s;
+  animation-duration: 7s;
 }
 .bg-glyph--3 i {
   animation-delay: 2.4s;
+  animation-duration: 5.5s;
 }
 .bg-glyph--4 i {
   animation-delay: 0.8s;
+  animation-duration: 7.5s;
 }
 .bg-glyph--5 i {
   animation-delay: 3.1s;
+  animation-duration: 6.2s;
 }
 .bg-glyph--6 i {
   animation-delay: 1.6s;
+  animation-duration: 6.8s;
 }
 .bg-glyph--7 i {
   animation-delay: 2.8s;
+  animation-duration: 5.8s;
 }
 .bg-glyph--8 i {
   animation-delay: 0.4s;
+  animation-duration: 7.2s;
 }
 .bg-glyph--9 i {
   animation-delay: 2s;
+  animation-duration: 6.4s;
 }
 .bg-glyph--10 i {
   animation-delay: 3.4s;
+  animation-duration: 7.8s;
 }
 .bg-glyph--11 i {
   animation-delay: 0.6s;
+  animation-duration: 5.6s;
 }
 .bg-glyph--12 i {
   animation-delay: 1.9s;
+  animation-duration: 6.6s;
+}
+.bg-glyph--13 i {
+  animation-delay: 2.6s;
+  animation-duration: 6.9s;
+}
+.bg-glyph--14 i {
+  animation-delay: 1.1s;
+  animation-duration: 7.3s;
 }
 
 @keyframes bg-drift {
@@ -434,21 +488,14 @@ span {
   }
 }
 
-.bg-lines {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.bg-lines line {
-  stroke: #1e293b;
-  stroke-width: 0.15;
-}
-
-.bg-lines circle {
-  fill: #38bdf8;
-  opacity: 0.5;
+@keyframes bg-sway {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(14px, -10px);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
