@@ -23,14 +23,15 @@ body {
 }
 
 header {
-  margin-top: 20px;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  padding: 1rem 9%;
-  background-color: transparent;
-  filter: drop-shadow(10px);
+  padding: 1.6rem 9%;
+  background-color: rgba(17, 17, 17, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(39, 39, 42, 0.8);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -38,15 +39,20 @@ header {
 }
 
 .logo {
-  font-size: 3rem;
-  color: rgb(192, 12, 42);
-  font-weight: 800;
+  font-size: 2.6rem;
+  color: #ffffff;
+  font-weight: 700;
   cursor: pointer;
-  transition: 0.5s ease;
+  transition: 0.3s ease;
+  letter-spacing: 0.05rem;
+}
+
+.logo span {
+  color: #38bdf8;
 }
 
 .logo:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 /* nav bar*/
@@ -110,9 +116,15 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 8rem;
+  gap: 6rem;
+  max-width: 1300px;
+  margin: 0 auto;
   background-color: #111111;
   min-height: 100vh;
+}
+
+.home-content {
+  max-width: 60rem;
 }
 
 .home .home-content h1 {
@@ -150,8 +162,8 @@ span {
 }
 
 .home-img img:hover {
-  font-size: 1.8rem;
-  font-weight: 500;
+  box-shadow: 0 0 40px rgba(56, 189, 248, 0.35);
+  transform: translateY(-4px);
 }
 
 .social-icons a {
@@ -305,7 +317,7 @@ span {
 }
 .projects {
   background-color: #111111;
-  padding: 6rem 9% 8rem;
+  padding: 8rem 9% 6rem;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -325,8 +337,8 @@ span {
 }
 
 .project-card {
-  background-color: transparent;
-  border: 1px dashed #3f3f46;
+  background-color: #18181b;
+  border: 1px solid #27272a;
   border-radius: 1.6rem;
   padding: 2.5rem;
   display: flex;
@@ -335,7 +347,9 @@ span {
 }
 
 .project-card:hover {
-  border-color: #71717a;
+  border-color: #38bdf8;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px -10px rgba(56, 189, 248, 0.15);
 }
 
 .project-img {
@@ -343,7 +357,7 @@ span {
   border-radius: 1rem;
   overflow: hidden;
   margin-bottom: 2.5rem;
-  background-color: #ffffff;
+  background-color: #1a1a1a;
 }
 
 .project-img img {
@@ -382,6 +396,23 @@ span {
   font-size: 1.4rem;
   color: #a1a1aa;
   line-height: 1.6;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 0.4rem;
+}
+
+.tag {
+  font-size: 1.2rem;
+  color: #38bdf8;
+  background-color: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  padding: 0.4rem 1.2rem;
+  border-radius: 2rem;
+  font-weight: 500;
 }
 
 .project-footer {
@@ -520,7 +551,7 @@ span {
   background-color: #111111;
   padding: 1rem 1.8rem;
   border-radius: 1rem;
-  border: 1px dashed #3f3f46;
+  border: 1px solid #27272a;
   transition: 0.3s ease;
 }
 
@@ -537,6 +568,48 @@ span {
 .tech-item:hover {
   border-color: #38bdf8;
   background-color: #18181b;
+}
+
+/* icon colors, kept in CSS rather than inline HTML styles */
+.icon-html {
+  color: #e34f26;
+}
+.icon-css {
+  color: #264de4;
+}
+.icon-js {
+  color: #f7df1e;
+}
+.icon-java {
+  color: #007396;
+}
+.icon-python {
+  color: #3776ab;
+}
+.icon-vscode {
+  color: #0078d7;
+}
+.icon-git {
+  color: #f1502f;
+}
+.icon-github {
+  color: #ffffff;
+}
+.icon-figma {
+  color: #f24e1e;
+}
+
+.eyebrow {
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.15rem;
+  text-transform: uppercase;
+  color: #38bdf8;
+  background-color: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  padding: 0.4rem 1.2rem;
+  border-radius: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .pulse-icon {
@@ -619,7 +692,6 @@ span {
 .cert-card:hover {
   border-color: #38bdf8;
   border-left: 4px solid #38bdf8;
-  transform: translateX(10px);
   box-shadow: 0 10px 25px -10px rgba(56, 189, 248, 0.15);
 }
 
