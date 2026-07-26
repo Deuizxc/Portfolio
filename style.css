@@ -119,10 +119,9 @@ section {
   gap: 6rem;
   max-width: 1300px;
   margin: 0 auto;
-  background-color: #111111;
+  background-color: transparent;
   min-height: 100vh;
   position: relative;
-  overflow: hidden;
 }
 
 .home-img {
@@ -292,137 +291,174 @@ span {
   }
 }
 
-/* --- HERO FLOATING ICON BACKGROUND --- */
-.hero-bg {
-  position: absolute;
+/* --- SITE-WIDE FLOATING ICON BACKGROUND --- */
+.site-bg {
+  position: fixed;
   inset: 0;
-  z-index: 0;
+  z-index: -1;
   pointer-events: none;
   overflow: hidden;
 }
 
-.hero-glyph {
+.bg-glyph {
   position: absolute;
   color: #1e293b;
   display: block;
 }
 
-.hero-glyph i {
+.bg-glyph i {
   display: block;
-  animation: hero-drift 9s ease-in-out infinite;
+  animation: bg-drift 6s ease-in-out infinite;
 }
 
-.hero-glyph--1 {
-  top: 10%;
+.bg-glyph--1 {
+  top: 8%;
   left: 5%;
   font-size: 3.2rem;
   transform: rotate(-8deg);
 }
-.hero-glyph--2 {
-  top: 7%;
+.bg-glyph--2 {
+  top: 5%;
   left: 47%;
   font-size: 2.4rem;
   transform: rotate(5deg);
 }
-.hero-glyph--3 {
-  top: 20%;
+.bg-glyph--3 {
+  top: 16%;
   left: 88%;
   font-size: 2.8rem;
   transform: rotate(6deg);
   color: #14313f;
 }
-.hero-glyph--4 {
-  top: 70%;
-  left: 7%;
+.bg-glyph--4 {
+  top: 32%;
+  left: 8%;
   font-size: 2.6rem;
   transform: rotate(4deg);
 }
-.hero-glyph--5 {
-  top: 80%;
+.bg-glyph--5 {
+  top: 46%;
   left: 40%;
   font-size: 2rem;
   transform: rotate(-6deg);
 }
-.hero-glyph--6 {
-  top: 85%;
+.bg-glyph--6 {
+  top: 60%;
   left: 82%;
   font-size: 2.4rem;
   transform: rotate(-4deg);
   color: #14313f;
 }
-.hero-glyph--7 {
+.bg-glyph--7 {
   top: 38%;
   left: 93%;
   font-size: 2.2rem;
   transform: rotate(8deg);
 }
-.hero-glyph--8 {
-  top: 52%;
+.bg-glyph--8 {
+  top: 68%;
   left: 2%;
   font-size: 2rem;
   transform: rotate(10deg);
 }
+.bg-glyph--9 {
+  top: 78%;
+  left: 46%;
+  font-size: 2.6rem;
+  transform: rotate(-5deg);
+}
+.bg-glyph--10 {
+  top: 88%;
+  left: 20%;
+  font-size: 2.2rem;
+  transform: rotate(7deg);
+  color: #14313f;
+}
+.bg-glyph--11 {
+  top: 92%;
+  left: 68%;
+  font-size: 2rem;
+  transform: rotate(-9deg);
+}
+.bg-glyph--12 {
+  top: 22%;
+  left: 60%;
+  font-size: 2.2rem;
+  transform: rotate(3deg);
+}
 
-.hero-glyph--1 i {
+.bg-glyph--1 i {
   animation-delay: 0s;
 }
-.hero-glyph--2 i {
+.bg-glyph--2 i {
   animation-delay: 1.2s;
 }
-.hero-glyph--3 i {
+.bg-glyph--3 i {
   animation-delay: 2.4s;
 }
-.hero-glyph--4 i {
+.bg-glyph--4 i {
   animation-delay: 0.8s;
 }
-.hero-glyph--5 i {
+.bg-glyph--5 i {
   animation-delay: 3.1s;
 }
-.hero-glyph--6 i {
+.bg-glyph--6 i {
   animation-delay: 1.6s;
 }
-.hero-glyph--7 i {
+.bg-glyph--7 i {
   animation-delay: 2.8s;
 }
-.hero-glyph--8 i {
+.bg-glyph--8 i {
   animation-delay: 0.4s;
 }
+.bg-glyph--9 i {
+  animation-delay: 2s;
+}
+.bg-glyph--10 i {
+  animation-delay: 3.4s;
+}
+.bg-glyph--11 i {
+  animation-delay: 0.6s;
+}
+.bg-glyph--12 i {
+  animation-delay: 1.9s;
+}
 
-@keyframes hero-drift {
+@keyframes bg-drift {
   0%,
   100% {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-12px);
+    transform: translateY(-20px);
   }
 }
 
-.hero-lines {
+.bg-lines {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
 }
 
-.hero-lines line {
+.bg-lines line {
   stroke: #1e293b;
   stroke-width: 0.15;
 }
 
-.hero-lines circle {
+.bg-lines circle {
   fill: #38bdf8;
   opacity: 0.5;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-glyph i {
+  .bg-glyph i {
     animation: none;
   }
 }
 
-@media (max-width: 995px) {
-  .hero-bg {
+@media (max-width: 700px) {
+  .site-bg {
     display: none;
   }
 }
@@ -462,7 +498,7 @@ span {
   transform: scale(1.05);
 }
 .projects {
-  background-color: #111111;
+  background-color: transparent;
   padding: 8rem 9% 6rem;
   max-width: 1200px;
   margin: 0 auto;
@@ -601,7 +637,7 @@ span {
 
 /* --- BENTO BOX SKILLS SECTION --- */
 .skills-bento {
-  background-color: #111111;
+  background-color: transparent;
   padding: 8rem 9% 6rem;
   max-width: 1200px;
   margin: 0 auto;
@@ -800,7 +836,7 @@ span {
 }
 
 .certifications {
-  background-color: #111111;
+  background-color: transparent;
   padding: 8rem 9% 6rem;
   max-width: 1000px;
   margin: 0 auto;
