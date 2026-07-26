@@ -3,6 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem("portfolio-theme");
+          var prefersLight =
+            window.matchMedia &&
+            window.matchMedia("(prefers-color-scheme: light)").matches;
+          if (saved === "light" || (!saved && prefersLight)) {
+            document.documentElement.setAttribute("data-theme", "light");
+          }
+        } catch (e) {
+          /* localStorage blocked — just default to dark */
+        }
+      })();
+    </script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -38,13 +53,24 @@
 
     <header>
       <a href="#" class="logo">John<span>.</span></a>
-      <nav>
-        <a href="#" class="active">Home</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#certifications">Certifications</a>
-        <a href="#">Contact</a>
-      </nav>
+      <div class="header-right">
+        <nav>
+          <a href="#" class="active">Home</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#certifications">Certifications</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <button
+          class="theme-toggle"
+          id="themeToggle"
+          aria-label="Toggle dark and light mode"
+          type="button"
+        >
+          <i class="bx bx-moon"></i>
+          <i class="bx bx-sun"></i>
+        </button>
+      </div>
     </header>
 
     <section class="home">
@@ -60,11 +86,26 @@
           knowledge.
         </p>
         <div class="social-icons">
-          <a href="#"><i class="fab fa-github"></i></a>
-          <a href="#"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a
+            href="https://github.com/yourusername"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><i class="fab fa-github"></i
+          ></a>
+          <a
+            href="https://linkedin.com/in/yourusername"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+          <a
+            href="https://instagram.com/yourusername"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><i class="fab fa-instagram"></i
+          ></a>
         </div>
-        <a href="#" class="btn">Contact Me</a>
+        <a href="#contact" class="btn">Contact Me</a>
       </div>
     </section>
 
@@ -153,6 +194,9 @@
         <div class="project-card">
           <div class="project-img">
             <img src="assets/weather.png" alt="Personaa" />
+            <div class="project-overlay">
+              <i class="bx bx-link-external"></i>
+            </div>
           </div>
           <div class="project-content">
             <div class="project-title-row">
@@ -168,16 +212,14 @@
               <span class="tag">CSS</span>
             </div>
           </div>
-          <div class="project-footer">
-            <a href="#" class="details-link"
-              >Details <i class="bx bx-right-arrow-alt"></i
-            ></a>
-          </div>
         </div>
 
         <div class="project-card">
           <div class="project-img">
             <img src="assets/url scanner.png" alt="Url scanner" />
+            <div class="project-overlay">
+              <i class="bx bx-link-external"></i>
+            </div>
           </div>
           <div class="project-content">
             <div class="project-title-row">
@@ -189,16 +231,14 @@
               <span class="tag">Security</span>
             </div>
           </div>
-          <div class="project-footer">
-            <a href="#" class="details-link"
-              >Details <i class="bx bx-right-arrow-alt"></i
-            ></a>
-          </div>
         </div>
 
         <div class="project-card">
           <div class="project-img">
             <img src="assets/password.png" alt="Password Strength Checker" />
+            <div class="project-overlay">
+              <i class="bx bx-link-external"></i>
+            </div>
           </div>
           <div class="project-content">
             <div class="project-title-row">
@@ -213,16 +253,14 @@
               <span class="tag">Security</span>
             </div>
           </div>
-          <div class="project-footer">
-            <a href="#" class="details-link"
-              >Details <i class="bx bx-right-arrow-alt"></i
-            ></a>
-          </div>
         </div>
 
         <div class="project-card">
           <div class="project-img">
             <img src="assets/gwa.png" alt="SimLink" />
+            <div class="project-overlay">
+              <i class="bx bx-link-external"></i>
+            </div>
           </div>
           <div class="project-content">
             <div class="project-title-row">
@@ -236,11 +274,6 @@
               <span class="tag">Java</span>
               <span class="tag">Data</span>
             </div>
-          </div>
-          <div class="project-footer">
-            <a href="#" class="details-link"
-              >Details <i class="bx bx-right-arrow-alt"></i
-            ></a>
           </div>
         </div>
       </div>
@@ -264,7 +297,13 @@
             </div>
           </div>
 
-          <div class="cert-proof">
+          <div
+            class="cert-proof"
+            data-lightbox
+            tabindex="0"
+            role="button"
+            aria-label="View certificate image"
+          >
             <img
               src="assets/cybersec1.jpg"
               alt="Cybersecurity Certificate Proof"
@@ -286,7 +325,13 @@
             </div>
           </div>
 
-          <div class="cert-proof">
+          <div
+            class="cert-proof"
+            data-lightbox
+            tabindex="0"
+            role="button"
+            aria-label="View certificate image"
+          >
             <img src="assets/datacamp.jpg" alt="Cybersecurity foundations" />
           </div>
         </div>
@@ -305,7 +350,13 @@
             </div>
           </div>
 
-          <div class="cert-proof">
+          <div
+            class="cert-proof"
+            data-lightbox
+            tabindex="0"
+            role="button"
+            aria-label="View certificate image"
+          >
             <img
               src="assets/hv.png"
               alt="Cybersecurity Foundations Certificate"
@@ -314,5 +365,69 @@
         </div>
       </div>
     </section>
+
+    <section class="github-activity" id="github-activity">
+      <div class="gh-card">
+        <div class="gh-header">
+          <h2 class="gh-title">
+            <i class="bx bxl-github"></i> GitHub Activity
+          </h2>
+          <div class="gh-header-right">
+            <span class="gh-count"
+              ><span id="ghContribCount">—</span> contributions</span
+            >
+            <div class="gh-year-tabs" id="ghYearTabs"></div>
+          </div>
+        </div>
+        <div class="gh-graph-wrap">
+          <div class="gh-months" id="ghMonths"></div>
+          <div class="gh-grid" id="ghGrid" aria-live="polite">
+            <p class="gh-status" id="ghStatus">Loading contribution graph…</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <h2 class="heading">Get In <span>Touch</span></h2>
+      <p class="contact-subtext">Reach out through either of these.</p>
+      <div class="contact-cards">
+        <a
+          href="mailto:bacani.johnbernard.tayag@gmail.com"
+          class="contact-card"
+        >
+          <div class="contact-icon"><i class="bx bx-envelope"></i></div>
+          <div class="contact-info">
+            <span class="contact-value">Email</span>
+          </div>
+        </a>
+        <a
+          href="https://linkedin.com/in/john-bernard-bacani-449901421"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="contact-card"
+        >
+          <div class="contact-icon"><i class="fab fa-linkedin-in"></i></div>
+          <div class="contact-info">
+            <span class="contact-value">LinkedIn</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <button
+        class="lightbox-close"
+        id="lightboxClose"
+        aria-label="Close image preview"
+      >
+        <i class="bx bx-x"></i>
+      </button>
+      <div class="lightbox-content">
+        <img src="" alt="Enlarged certificate" id="lightboxImg" />
+      </div>
+    </div>
+
+    <script src="script.js"></script>
   </body>
 </html>
