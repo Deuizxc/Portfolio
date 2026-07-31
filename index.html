@@ -14,7 +14,6 @@
             document.documentElement.setAttribute("data-theme", "light");
           }
         } catch (e) {
-          /* localStorage blocked — just default to dark */
         }
       })();
     </script>
@@ -30,6 +29,11 @@
     <title>Portfolio</title>
   </head>
   <body>
+    <!-- Page Loader -->
+    <div class="page-loader" id="pageLoader">
+      <div class="loader-spinner"></div>
+    </div>
+
     <div class="site-bg" aria-hidden="true">
       <span class="bg-glyph bg-glyph--1"><i class="bx bx-code-alt"></i></span>
       <span class="bg-glyph bg-glyph--2"><i class="bx bx-terminal"></i></span>
@@ -420,7 +424,34 @@
       </div>
     </div>
 
+    <div class="cmd-palette" id="cmdPalette" aria-hidden="true">
+      <div class="cmd-palette-backdrop" id="cmdBackdrop"></div>
+      <div class="cmd-palette-modal">
+        <div class="cmd-search-wrap">
+          <i class="bx bx-search"></i>
+          <input type="text" id="cmdInput" placeholder="Search commands..." autocomplete="off" aria-label="Command palette search" />
+          <span class="cmd-shortcut">ESC</span>
+        </div>
+        <ul class="cmd-list" id="cmdList" role="listbox">
+          <li class="cmd-item" data-action="link" data-href="#skills" role="option">
+            <i class="bx bx-code-alt"></i> Go to Skills
+          </li>
+          <li class="cmd-item" data-action="link" data-href="#projects" role="option">
+            <i class="bx bx-briefcase"></i> Go to Projects
+          </li>
+          <li class="cmd-item" data-action="link" data-href="#certifications" role="option">
+            <i class="bx bx-certification"></i> Go to Certifications
+          </li>
+          <li class="cmd-item" data-action="theme" role="option">
+            <i class="bx bx-palette"></i> Toggle Theme
+          </li>
+          <li class="cmd-item" data-action="link" data-href="https://github.com/Deuizxc" role="option">
+            <i class="bx bxl-github"></i> Open GitHub
+          </li>
+        </ul>
+      </div>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>
-<

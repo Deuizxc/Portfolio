@@ -285,3 +285,134 @@ function safeSet(key, value) {
     console.error("Certificate lightbox failed to initialize:", err);
   }
 })();
+
+(function addModernFeatures() {
+  // 1. Page Loader Logic
+  window.addEventListener("load", () => {
+    const loader = document.getElementById("pageLoader");
+    if (loader) {
+      loader.classList.add("fade-out");
+      setTimeout(() => loader.remove(), 500);
+    }
+  });
+
+  // 2. Command Palette Logic
+  try {
+    const palette = document.getElementById("cmdPalette");
+    const input = document.getElementById("cmdInput");
+    const list = document.getElementById("cmdList");
+    const backdrop = document.getElementById("cmdBackdrop");
+    const themeToggleBtn = document.getElementById("themeToggle");
+
+    if (!palette || !input || !list) return;
+
+    const items = Array.from(list.querySelectorAll(".cmd-item"));
+    let currentIndex = -1;
+
+    function openPalette() {
+      palette.classList.add("is-open");
+      palette.setAttribute("aria-hidden", "false");
+      input.value = "";
+      filterItems("");
+      input.focus();
+      document.body.style.overflow = "hidden";
+    }
+
+    function closePalette() {
+      palette.classList.remove("is-open");
+      palette.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+      input.blur();
+      currentIndex = -1;
+      updateSelection(items);
+    }
+
+    function filterItems(query) {
+      const q = query.toLowerCase();
+      items.forEach(item => {
+        const text = item.textContent.toLowerCase();
+        item.style.display = text.includes(q) ? "flex" : "none";
+      });
+      currentIndex = -1; // Reset selection on typing
+      updateSelection(getVisibleItems());
+    }
+
+    function getVisibleItems() {
+      return items.filter(item => item.style.display !== "none");
+    }
+
+    function updateSelection(visibleItems) {
+      items.forEach(item => item.classList.remove("active"));
+      if (visibleItems.length > 0 && currentIndex >= 0) {
+        visibleItems[currentIndex].classList.add("active");
+        visibleItems[currentIndex].scrollIntoView({ block: "nearest" });
+      }
+    }
+
+    function executeAction(item) {
+      if (!item) return;
+      const action = item.dataset.action;
+      
+      if (action === "link") {
+        const href = item.dataset.href;
+        if (href.startsWith("#")) {
+          const target = document.querySelector(href);
+          if (target) target.scrollIntoView({ behavior: "smooth" });
+        } else {
+          window.open(href, "_blank", "noopener noreferrer");
+        }
+      } else if (action === "theme" && themeToggleBtn) {
+        themeToggleBtn.click();
+      }
+      
+      closePalette();
+    }
+
+    // Keyboard bindings
+    document.addEventListener("keydown", (e) => {
+      // Toggle on Cmd+K or Ctrl+K
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
+        e.preventDefault();
+        palette.classList.contains("is-open") ? closePalette() : openPalette();
+      }
+      // Close on Escape
+      if (e.key === "Escape" && palette.classList.contains("is-open")) {
+        closePalette();
+      }
+    });
+
+    // Arrow navigation inside input
+    input.addEventListener("keydown", (e) => {
+      const visibleItems = getVisibleItems();
+      
+      if (e.key === "ArrowDown") {
+        e.preventDefault();
+        currentIndex = (currentIndex + 1) % visibleItems.length;
+        updateSelection(visibleItems);
+      } else if (e.key === "ArrowUp") {
+        e.preventDefault();
+        currentIndex = (currentIndex - 1 + visibleItems.length) % visibleItems.length;
+        updateSelection(visibleItems);
+      } else if (e.key === "Enter") {
+        e.preventDefault();
+        const targetItem = currentIndex >= 0 ? visibleItems[currentIndex] : visibleItems[0];
+        executeAction(targetItem);
+      }
+    });
+
+    // Mouse interactions
+    input.addEventListener("input", (e) => filterItems(e.target.value));
+    backdrop.addEventListener("click", closePalette);
+    
+    items.forEach(item => {
+      item.addEventListener("mouseenter", () => {
+        currentIndex = getVisibleItems().indexOf(item);
+        updateSelection(getVisibleItems());
+      });
+      item.addEventListener("click", () => executeAction(item));
+    });
+
+  } catch (err) {
+    console.error("Command Palette failed to initialize:", err);
+  }
+})();
