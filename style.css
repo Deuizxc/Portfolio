@@ -267,7 +267,7 @@ section {
 }
 
 .home-content {
-  max-width: 60rem;
+  max-width: 68rem;
   position: relative;
   z-index: 1;
 }
@@ -275,8 +275,8 @@ section {
 .hero-identity {
   display: flex;
   align-items: center;
-  gap: 2rem;
-  margin-bottom: 1.5rem;
+  gap: 2.6rem;
+  margin-bottom: 2rem;
 }
 
 .home-img {
@@ -286,7 +286,7 @@ section {
 }
 
 .home .home-content h1 {
-  font-size: 5rem;
+  font-size: 6rem;
   font-weight: 700;
   line-height: 1.3;
 }
@@ -296,21 +296,21 @@ span {
 }
 
 .home-content h3 {
-  font-size: 2.8rem;
-  margin-bottom: 0.8rem;
+  font-size: 3.2rem;
+  margin-bottom: 1rem;
   font-weight: 700;
 }
 
 .home-content p {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   line-height: 1.7;
   color: var(--text-secondary);
 }
 
 .home-img {
   border-radius: 50%;
-  width: 8rem;
-  height: 8rem;
+  width: 12rem;
+  height: 12rem;
 }
 
 .home-img img {
@@ -319,13 +319,13 @@ span {
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
-  box-shadow: 0 0 20px rgba(56, 189, 248, 0.25);
+  box-shadow: 0 0 28px rgba(56, 189, 248, 0.3);
   cursor: pointer;
   transition: 0.2s linear;
 }
 
 .home-img img:hover {
-  box-shadow: 0 0 32px rgba(56, 189, 248, 0.4);
+  box-shadow: 0 0 42px rgba(56, 189, 248, 0.45);
   transform: translateY(-4px);
 }
 
@@ -439,12 +439,12 @@ span {
   }
 
   .home-content h1 {
-    font-size: 3.6rem;
+    font-size: 4.2rem;
   }
 
   .home-img {
-    width: 6rem;
-    height: 6rem;
+    width: 9rem;
+    height: 9rem;
   }
 }
 
