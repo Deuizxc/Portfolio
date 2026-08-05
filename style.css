@@ -262,12 +262,13 @@ section {
   max-width: 1300px;
   margin: 0 auto;
   background-color: transparent;
-  min-height: 100vh;
+  min-height: auto;
+  padding: 16rem 9% 12rem;
   position: relative;
 }
 
 .home-content {
-  max-width: 68rem;
+  max-width: 70rem;
   position: relative;
   z-index: 1;
 }
@@ -275,8 +276,8 @@ section {
 .hero-identity {
   display: flex;
   align-items: center;
-  gap: 2.6rem;
-  margin-bottom: 2rem;
+  gap: 2.8rem;
+  margin-bottom: 2.2rem;
 }
 
 .home-img {
@@ -286,7 +287,7 @@ section {
 }
 
 .home .home-content h1 {
-  font-size: 6rem;
+  font-size: 6.6rem;
   font-weight: 700;
   line-height: 1.3;
 }
@@ -296,21 +297,22 @@ span {
 }
 
 .home-content h3 {
-  font-size: 3.2rem;
-  margin-bottom: 1rem;
+  font-size: 3.4rem;
+  margin-bottom: 1.2rem;
   font-weight: 700;
 }
 
 .home-content p {
-  font-size: 1.6rem;
-  line-height: 1.7;
+  font-size: 1.7rem;
+  line-height: 1.75;
   color: var(--text-secondary);
+  margin-bottom: 0.5rem;
 }
 
 .home-img {
   border-radius: 50%;
-  width: 12rem;
-  height: 12rem;
+  width: 14rem;
+  height: 14rem;
 }
 
 .home-img img {
@@ -319,13 +321,13 @@ span {
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
-  box-shadow: 0 0 28px rgba(56, 189, 248, 0.3);
+  box-shadow: 0 0 32px rgba(56, 189, 248, 0.32);
   cursor: pointer;
   transition: 0.2s linear;
 }
 
 .home-img img:hover {
-  box-shadow: 0 0 42px rgba(56, 189, 248, 0.45);
+  box-shadow: 0 0 46px rgba(56, 189, 248, 0.48);
   transform: translateY(-4px);
 }
 
@@ -333,11 +335,11 @@ span {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 4rem;
-  height: 4rem;
+  width: 4.4rem;
+  height: 4.4rem;
   background-color: transparent;
   border: 0.2rem solid var(--border);
-  font-size: 2rem;
+  font-size: 2.1rem;
   border-radius: 50%;
   margin: 2rem 1.2rem 2rem 0;
   transition: 0.3s ease;
@@ -353,10 +355,10 @@ span {
 
 .btn {
   display: inline-block;
-  padding: 0.9rem 2.6rem;
+  padding: 1.1rem 3rem;
   background-color: var(--surface-1);
   border-radius: 4rem;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   color: var(--text-heading);
   letter-spacing: 0.25rem;
   font-weight: 600;
@@ -431,20 +433,20 @@ span {
 
 @media (max-width: 995px) {
   .home {
-    margin: 5rem 4rem;
+    padding: 12rem 6% 6rem;
   }
 
   .home .home-content h3 {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
   }
 
   .home-content h1 {
-    font-size: 4.2rem;
+    font-size: 4.6rem;
   }
 
   .home-img {
-    width: 9rem;
-    height: 9rem;
+    width: 10rem;
+    height: 10rem;
   }
 }
 
